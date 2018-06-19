@@ -1,7 +1,10 @@
 
 .form
-  padding: 60px
-  height: calc(100vh - 86px - 65px - 55px )
+  padding-left: 60px
+  padding-top: 60px
+  padding-bottom: 60px
+  height: calc(100vh - 86px - 65px - 55px)
+  width: calc(100vw - 300px - 60px )
   &-top
     margin-bottom: 45px
     &_title
@@ -11,7 +14,9 @@
       font-size: 21px
       color: #333
   &-box
+    margin-bottom: 32px
     &_title
+      width: calc(100vw - 450px)
       font-style: normal
       font-weight: bold
       line-height: normal
@@ -19,12 +24,40 @@
       letter-spacing: 0.15px
       color: #333333
     &-inputs
-      &label
-        &p
+      label
+        display: flex
+        flex-wrap: wrap
+        padding-top: 20px
+        input
+          margin-left: 0
+        p
           font-style: normal
           font-weight: normal
           line-height: normal
           font-size: 15px
           letter-spacing: 0.15px
           color: #333333
+          &:first-letter
+            text-transform: uppercase
+      div
+        display: flex
+        flex-wrap: wrap
+        span
+          padding-top: 20px
+          padding-right: 20px
+          &:first-letter
+            text-transform: uppercase
+        label
+          margin-right: 10px
 
+
+
+.scrollingBox
+  overflow: auto
+  height: calc(100vh - 85px - 60px - 60px - 60px)
+  &::-webkit-scrollbar
+    width: 7px
+  &::-webkit-scrollbar-track
+    background: #fff
+  &::-webkit-scrollbar-thumb
+    background-color: #666

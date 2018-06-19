@@ -66,7 +66,6 @@ class Rating extends Component {
 
   changePaginationButton(numb){
     this.props.dispatch(setCurrentRatingPagination(numb));
-    console.log('changedNumb', numb);
   }
 
   getPaginationButtons(){

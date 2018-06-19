@@ -1,4 +1,5 @@
 @import url(fonts/fontello.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,8 +55,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  width: calc(100vw - 80px); }
+  align-items: center; }
   header .logo {
     font-family: "SansSerif", sans-serif;
     font-style: normal;
@@ -101,6 +101,22 @@ header {
     header nav .dropdown:hover .dropdown-content {
       display: block; }
 
+.logo {
+  font-family: "SansSerif", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 0.416667px;
+  text-decoration: none; }
+  .logo:before {
+    content: "RD.";
+    color: #66B6FE; }
+  .logo:after {
+    content: "GSU";
+    color: #333; }
+
 .leftNav {
   background: #333;
   height: calc(100vh - 86px - 65px);
@@ -113,8 +129,9 @@ header {
       background: linear-gradient(90deg, #2A65E2 0%, #66B6FE 100%), #222222;
       box-shadow: 0px 40px 40px rgba(0, 0, 0, 0.05); }
     .leftNav ul li a {
-      margin-left: 45px;
-      width: 100%;
+      display: block;
+      padding-left: 45px;
+      width: calc(300px - 45px);
       height: 50px;
       font-style: normal;
       font-weight: normal;
@@ -122,7 +139,6 @@ header {
       font-size: 15px;
       letter-spacing: 0.15px;
       color: #FFF;
-      text-align: center;
       text-decoration: none; }
   .leftNav ul .active {
     background: linear-gradient(90deg, #2A65E2 0%, #66B6FE 100%), #222222;
@@ -213,8 +229,26 @@ header {
   .rating-pagination {
     position: absolute;
     bottom: 0;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 30px;
     display: flex; }
+    .rating-pagination button {
+      font-style: normal;
+      font-weight: bold;
+      line-height: normal;
+      font-size: 15px; }
+    .rating-pagination_clr {
+      color: #54acfe;
+      border: 0;
+      padding: 0;
+      border-bottom: 2px solid #54acfe;
+      background: #fff; }
+    .rating-pagination_sbm {
+      margin-right: 15px;
+      border: 0;
+      padding: 3px 15px;
+      background: #54acfe;
+      color: #fff; }
     .rating-pagination div {
       margin-right: 5px;
       padding: 5px 8px;
@@ -228,8 +262,11 @@ header {
       border-color: #333; }
 
 .form {
-  padding: 60px;
-  height: calc(100vh - 86px - 65px - 55px ); }
+  padding-left: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  height: calc(100vh - 86px - 65px - 55px);
+  width: calc(100vw - 300px - 60px ); }
   .form-top {
     margin-bottom: 45px; }
     .form-top_title {
@@ -238,26 +275,135 @@ header {
       line-height: normal;
       font-size: 21px;
       color: #333; }
-  .form-box_title {
-    font-style: normal;
-    font-weight: bold;
-    line-height: normal;
-    font-size: 15px;
-    letter-spacing: 0.15px;
-    color: #333333; }
-  .form-box-inputslabelp {
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 15px;
-    letter-spacing: 0.15px;
-    color: #333333; }
+  .form-box {
+    margin-bottom: 32px; }
+    .form-box_title {
+      width: calc(100vw - 450px);
+      font-style: normal;
+      font-weight: bold;
+      line-height: normal;
+      font-size: 15px;
+      letter-spacing: 0.15px;
+      color: #333333; }
+    .form-box-inputs label {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 20px; }
+      .form-box-inputs label input {
+        margin-left: 0; }
+      .form-box-inputs label p {
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 15px;
+        letter-spacing: 0.15px;
+        color: #333333; }
+        .form-box-inputs label p:first-letter {
+          text-transform: uppercase; }
+    .form-box-inputs div {
+      display: flex;
+      flex-wrap: wrap; }
+      .form-box-inputs div span {
+        padding-top: 20px;
+        padding-right: 20px; }
+        .form-box-inputs div span:first-letter {
+          text-transform: uppercase; }
+      .form-box-inputs div label {
+        margin-right: 10px; }
+
+.scrollingBox {
+  overflow: auto;
+  height: calc(100vh - 85px - 60px - 60px - 60px); }
+  .scrollingBox::-webkit-scrollbar {
+    width: 7px; }
+  .scrollingBox::-webkit-scrollbar-track {
+    background: #fff; }
+  .scrollingBox::-webkit-scrollbar-thumb {
+    background-color: #666; }
 
 main {
   display: flex;
   flex-wrap: wrap; }
 
+.login {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px; }
+
+/* Reset top and bottom margins from certain elements */
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+/* The triangle form is achieved by a CSS hack */
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: #28d; }
+
+.login-header {
+  background: #28d;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff; }
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px; }
+
+/* Every row inside .login-container is defined with p tags */
+.login p {
+  padding: 12px; }
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em; }
+
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555; }
+
+/* Text fields' focus effect */
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888; }
+
+.login input[type="submit"] {
+  background: #28d;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer; }
+
+.login input[type="submit"]:hover {
+  background: #17c; }
+
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+  border-color: #05a; }
+
 body {
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  overflow: auto; }
+  body::-webkit-scrollbar {
+    width: 0px; }
+  body::-webkit-scrollbar-track {
+    background: #fff; }
+  body::-webkit-scrollbar-thumb {
+    background-color: #333; }
 
 /*# sourceMappingURL=index.css.map */

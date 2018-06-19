@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import LeftNav from "./leftNav/leftNav";
 import { Route, Switch } from "react-router-dom";
-import Topic from "../topic";
 import Rating from "./mainContent/rating/rating";
 import Classification from "./mainContent/forms/classification";
 import Education from "./mainContent/forms/education";
 import Scientific from "./mainContent/forms/scientific";
+import { store } from "../../../index";
 
 
 
@@ -13,6 +13,10 @@ class Main extends Component {
 
   constructor(props){
     super(props);
+  }
+
+  componentDidUpdate(){
+    console.log('store', store.getState())
   }
 
   render() {

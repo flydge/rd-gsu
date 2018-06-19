@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers);
-const store = createStore(reducers, initialState, composedEnhancers);
+export const store = createStore(reducers, initialState, composedEnhancers);
 
 console.log('store',store.getState());
 
